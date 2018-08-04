@@ -1,1 +1,0 @@
-au BufRead,BufNewFile *.xs set filetype=xscript
