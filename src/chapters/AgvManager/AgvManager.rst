@@ -3,4 +3,5 @@
 AgvManager
 *******************
 
-.. contents:: Table of Contents
+
+:download:`this example script <listing/AllFunctions_AgvHandling.xs>`

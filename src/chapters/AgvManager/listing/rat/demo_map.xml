@@ -1,0 +1,319 @@
+<!DOCTYPE AGVProject>
+<RATProject RATVersion="2.3.0-beta2" FileFormatVersion="3">
+ <AGVModel MapType="MGV_OB" AllUserPoints="0" LongDisplacement="1" MapName="workshop 2018-07-19 v3.9" GraphicBackgroundFileName="">
+  <SaveMapConfiguration MapFileName="map.map" LastSaveReflectorsFileName="" SaveReflectorsOnFile="0">
+   <SaveMapDir_01 Name=""/>
+  </SaveMapConfiguration>
+  <AGVLine Y1="1.2" X2="16.05" AbiNavTrasv="1" DivNavLong="0" X1="1.7" ModelItemID="21" Index="1" Y2="1.2" Name="" Origin="0">
+   <!-- line 1 -->
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="2.2" BackwardMode="0" RfidCode="4765018" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="4.2" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="6.4" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="8.800000000000001" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="11.4" AllowedDirection="Backward"/>
+  </AGVLine>
+  <AGVLine Y1="2.3" X2="16.05" X1="1.7" ModelItemID="35" Index="2" Y2="2.3" Name="" Origin="0">
+   <!-- line 2 -->
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="3.3" BackwardMode="0" RfidCode="4784394" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="4.2" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="6.4" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="8.800000000000001" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="11.46" BackwardMode="0" RfidCode="8556514" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="START" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="11.46" AllowedDirection="AnyDirection" StartIndex="10" StartingOrientation="Rear"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="11.96" BackwardMode="0" RfidCode="4788637" AllowedDirection="AnyDirection"/>
+  </AGVLine>
+  <AGVLine Y1="6.7" X2="16.05" X1="1.7" ModelItemID="51" Index="3" Y2="6.7" Name="" Origin="0">
+   <!-- line 3 -->
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="2.2" BackwardMode="0" RfidCode="7559859" AllowedDirection="Backward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="3.3" BackwardMode="0" RfidCode="7577614" AllowedDirection="Backward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="6.56" BackwardMode="0" RfidCode="13534089" AllowedDirection="Backward"/>
+   <AGVPoint Kind="START" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="6.56" AllowedDirection="Backward" StartIndex="12" StartingOrientation="Rear"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="7.06" BackwardMode="0" RfidCode="13519216" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="8.800000000000001" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="11.4" AllowedDirection="Backward"/>
+  </AGVLine>
+  <AGVLine Y1="7.8" X2="16.05" X1="1.7" ModelItemID="67" Index="4" Y2="7.8" Name="" Origin="0">
+   <!-- line 4 -->
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="3.3" BackwardMode="0" RfidCode="4770603" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="4.56" BackwardMode="0" RfidCode="11876152" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="6.56" BackwardMode="0" RfidCode="8576333" AllowedDirection="Forward"/>
+   <AGVPoint Kind="START" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="6.56" AllowedDirection="Forward" StartIndex="11" StartingOrientation="Rear"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="7.06" BackwardMode="0" RfidCode="8546869" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="8.800000000000001" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="11.4" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="11.96" BackwardMode="0" RfidCode="13530498" AllowedDirection="Forward"/>
+  </AGVLine>
+  <AGVLine Y1="14.3" X2="4.71" AbiNavTrasv="1" DivNavLong="0" X1="1.435" ModelItemID="84" Index="5" Y2="14.3" Name="" Origin="0">
+   <!-- line 5 -->
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="Unload1" Code="3001" GraphicAlignedOffset="0" Quote="3.04" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+  </AGVLine>
+  <AGVLine Y1="11.8" X2="4.95" AbiNavTrasv="1" DivNavLong="0" X1="0.6899999999999999" ModelItemID="94" Index="6" Y2="11.8" Name="" Origin="0">
+   <!-- line 6 -->
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="Load1" Code="2001" GraphicAlignedOffset="0" Quote="0.45" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="0" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="Unload2" Code="3002" GraphicAlignedOffset="0" Quote="3.8" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+  </AGVLine>
+  <AGVLine Y1="0.9" X2="6.86" AbiNavTrasv="1" DivNavLong="0" X1="6.86" ModelItemID="105" Index="7" Y2="8.1" Name="" Origin="0">
+   <!-- line 7 -->
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="101" GraphicAlignedOffset="0" Quote="2.5" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="201" GraphicAlignedOffset="0" Quote="3.6" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="301" GraphicAlignedOffset="0" Quote="4.7" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+  </AGVLine>
+  <AGVLine Y1="0.9" X2="9.359999999999999" AbiNavTrasv="1" DivNavLong="0" X1="9.359999999999999" ModelItemID="117" Index="8" Y2="8.1" Name="" Origin="0">
+   <!-- line 8 -->
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="102" GraphicAlignedOffset="0" Quote="2.5" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="202" GraphicAlignedOffset="0" Quote="3.6" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="302" GraphicAlignedOffset="0" Quote="4.7" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+  </AGVLine>
+  <AGVLine Y1="0.9" X2="11.86" AbiNavTrasv="1" DivNavLong="0" X1="11.86" ModelItemID="129" Index="9" Y2="8.1" Name="" Origin="0">
+   <!-- line 9 -->
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="103" GraphicAlignedOffset="0" Quote="2.5" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="203" GraphicAlignedOffset="0" Quote="3.6" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="303" GraphicAlignedOffset="0" Quote="4.7" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+  </AGVLine>
+  <AGVLine Y1="0.9" X2="14.36" AbiNavTrasv="1" DivNavLong="0" X1="14.36" ModelItemID="141" Index="10" Y2="8.1" Name="" Origin="0">
+   <!-- line 10 -->
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="104" GraphicAlignedOffset="0" Quote="2.5" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="204" GraphicAlignedOffset="0" Quote="3.6" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+   <AGVPoint Kind="USER" Speed="1" QuoteHasMeaning="true" AllowedOrientation="Left" PointName="" Code="304" GraphicAlignedOffset="0" Quote="4.7" Side="Centre" AllowedDirection="AnyDirection" GraphicSideOffset="0" UserKind="1" GraphicZetaOffset="0"/>
+  </AGVLine>
+  <AGVLine Y1="0.9" X2="2" X1="2" ModelItemID="153" Index="11" Y2="17.128" Name="" Origin="0">
+   <!-- line 11 -->
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="2.2" BackwardMode="0" RfidCode="4767472" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="3.633593903253093" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="7.7" BackwardMode="0" RfidCode="7570066" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="8.300000000000001" BackwardMode="0" RfidCode="8548458" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Code="4000" Quote="8.800000000000001" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="10.2" BackwardMode="0" RfidCode="8574131" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="12.7" BackwardMode="0" RfidCode="8580099" AllowedDirection="Forward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="ms12" ForwardMode="0" Single="true" Quote="14.9" BackwardMode="0" RfidCode="7562899" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="START" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="start1" Quote="14.9" AllowedDirection="AnyDirection" StartIndex="1" StartingOrientation="Rear"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="ms11" ForwardMode="0" Single="true" Quote="15.4" BackwardMode="0" RfidCode="4791362" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="15.62368427908651" AllowedDirection="AnyDirection"/>
+  </AGVLine>
+  <AGVLine Y1="0.9" X2="3.1" X1="3.1" ModelItemID="173" Index="12" Y2="17.128" Name="" Origin="0">
+   <!-- line 12 -->
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="3.3" BackwardMode="0" RfidCode="7596457" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="3.6" AllowedDirection="Backward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="3.9" BackwardMode="0" RfidCode="4780774" AllowedDirection="Backward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" ForwardMode="0" Single="true" Quote="8.800000000000001" BackwardMode="0" RfidCode="4775032" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="wait point" Code="2010" Quote="9.25" AllowedDirection="Backward"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="ms22" ForwardMode="0" Single="true" Quote="14.9" BackwardMode="0" RfidCode="1738589" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="START" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="start2" Quote="14.9" AllowedDirection="AnyDirection" StartIndex="2" StartingOrientation="Rear"/>
+   <AGVPoint Kind="MAGNET" SideOffset="0" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="ms21" ForwardMode="0" Single="true" Quote="15.4" BackwardMode="0" RfidCode="8579750" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="true" AllowedOrientation="AnyOrientation" PointName="" Quote="15.60915727613737" AllowedDirection="AnyDirection"/>
+  </AGVLine>
+  <AGVCross CrossName="" LinAModelItemID="51" UserCode="-1" ValAngleOvr="0" ModelItemID="191" Index="1" TollAngleOvr="1" LinBModelItemID="105" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="67" UserCode="-1" ValAngleOvr="0" ModelItemID="202" Index="2" TollAngleOvr="1" LinBModelItemID="105" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="51" UserCode="-1" ValAngleOvr="0" ModelItemID="213" Index="3" TollAngleOvr="1" LinBModelItemID="117" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="67" UserCode="-1" ValAngleOvr="0" ModelItemID="224" Index="4" TollAngleOvr="1" LinBModelItemID="117" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="51" UserCode="-1" ValAngleOvr="0" ModelItemID="235" Index="5" TollAngleOvr="1" LinBModelItemID="129" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="67" UserCode="-1" ValAngleOvr="0" ModelItemID="246" Index="6" TollAngleOvr="1" LinBModelItemID="129" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="51" UserCode="-1" ValAngleOvr="0" ModelItemID="257" Index="7" TollAngleOvr="1" LinBModelItemID="141" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="67" UserCode="-1" ValAngleOvr="0" ModelItemID="268" Index="8" TollAngleOvr="1" LinBModelItemID="141" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="21" UserCode="-1" ValAngleOvr="0" ModelItemID="279" Index="9" TollAngleOvr="1" LinBModelItemID="105" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="35" UserCode="-1" ValAngleOvr="0" ModelItemID="290" Index="10" TollAngleOvr="1" LinBModelItemID="105" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="21" UserCode="-1" ValAngleOvr="0" ModelItemID="301" Index="11" TollAngleOvr="1" LinBModelItemID="117" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="35" UserCode="-1" ValAngleOvr="0" ModelItemID="312" Index="12" TollAngleOvr="1" LinBModelItemID="117" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="21" UserCode="-1" ValAngleOvr="0" ModelItemID="323" Index="13" TollAngleOvr="1" LinBModelItemID="129" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="35" UserCode="-1" ValAngleOvr="0" ModelItemID="334" Index="14" TollAngleOvr="1" LinBModelItemID="129" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="21" UserCode="-1" ValAngleOvr="0" ModelItemID="345" Index="15" TollAngleOvr="1" LinBModelItemID="141" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="35" UserCode="-1" ValAngleOvr="0" ModelItemID="356" Index="16" TollAngleOvr="1" LinBModelItemID="141" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="84" UserCode="-1" ValAngleOvr="0" ModelItemID="367" Index="17" TollAngleOvr="1" LinBModelItemID="153" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="84" UserCode="-1" ValAngleOvr="0" ModelItemID="378" Index="18" TollAngleOvr="1" LinBModelItemID="173" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="94" UserCode="-1" ValAngleOvr="0" ModelItemID="389" Index="19" TollAngleOvr="1" LinBModelItemID="173" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="Backward"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="94" UserCode="-1" ValAngleOvr="0" ModelItemID="400" Index="20" TollAngleOvr="1" LinBModelItemID="153" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Rotation"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="AnyDirection"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="Forward"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="67" UserCode="-1" ValAngleOvr="0" ModelItemID="411" Index="21" TollAngleOvr="1" LinBModelItemID="173" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.3" Occupable="false" Number="1" CurvatureRadius="1.5" PassageMode="Curve"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="35" UserCode="-1" ValAngleOvr="0" ModelItemID="422" Index="22" TollAngleOvr="1" LinBModelItemID="173" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.3" Occupable="false" Number="1" CurvatureRadius="1.5" PassageMode="Curve"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="0.0174532925199433" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Forward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="Backward"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="21" UserCode="-1" ValAngleOvr="0" ModelItemID="433" Index="23" TollAngleOvr="1" LinBModelItemID="153" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.3" Occupable="false" Number="1" CurvatureRadius="1.5" PassageMode="Curve"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="Forward"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="51" UserCode="-1" ValAngleOvr="0" ModelItemID="444" Index="24" TollAngleOvr="1" LinBModelItemID="173" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="1" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="0.3" Occupable="false" Number="4" CurvatureRadius="1.5" PassageMode="Curve"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVCross CrossName="" LinAModelItemID="51" UserCode="-1" ValAngleOvr="0" ModelItemID="455" Index="25" TollAngleOvr="1" LinBModelItemID="153" DoAngleOvr="0">
+   <AGVCrossQuadrant Speed="0.3" Occupable="false" Number="1" CurvatureRadius="1.5" PassageMode="Curve"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="2" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="3" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVCrossQuadrant Speed="1" Occupable="false" Number="4" CurvatureRadius="1" PathFlags="1" PassageMode="Forbidden"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinA" AllowedDirection="Backward"/>
+   <AGVPoint Kind="GENERIC" Speed="1" QuoteHasMeaning="false" AllowedOrientation="AnyOrientation" PointName="" Line="LinB" AllowedDirection="AnyDirection"/>
+  </AGVCross>
+  <AGVVehicle larghezza="0.425" DisabledColour="#000000" DescriptionFileName="" Number="1" x="8.871" lunghezza="1.8" y="10.601" EnabledColour="#ffff00"/>
+ </AGVModel>
+ <Layout YOffset="0" ScaleFactor="0.001" FileName="workshop_layout.dxf" XOffset="0"/>
+ <Vehicle ConfigurationType="Triangle" VehicleAcceleration="1" MaxAngularVelocity="0.6981317007977318" WheelMovementTime="0" MinRotationSpeed="0.3490658503988659" Name="Vehicle" MaxSpeed="1">
+  <TrinagleConfiguration VehicleStep="1" DriveType="Front-Wheel" MaxWheelAngle="1.570796326794897" WheelOffset="0" MinWheelAngle="-1.570796326794897" MaxWheelTurningAcceleration="5.235987755982989" MaxWheelTurningSpeed="1.570796326794897"/>
+  <Layout YOffset="0" ScaleFactor="0.001" FileName="" XOffset="0"/>
+  <MainShape NumOfPoints="4" Colour="#ff0000">
+   <Point x="-0.5" y="-0.5" Index="0"/>
+   <Point x="0.5" y="-0.5" Index="1"/>
+   <Point x="0.5" y="0.5" Index="2"/>
+   <Point x="-0.5" y="0.5" Index="3"/>
+  </MainShape>
+ </Vehicle>
+ <SimulationPaths LengthStep="1" StepMode="0" TimeStep="1"/>
+</RATProject>

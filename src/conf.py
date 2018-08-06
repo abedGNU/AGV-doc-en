@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Robox AGV'
-copyright = u'2018, Abed'
-author = u'Abed'
+copyright = u'2018, Abed Ramadan'
+author = u'Abed Ramadan'
 
 # The short X.Y version
 version = u''
