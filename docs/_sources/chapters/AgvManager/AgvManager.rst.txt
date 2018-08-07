@@ -174,11 +174,17 @@ Properties assigned by the function ``AddIntProperty()``, are shown in the :ref:
 
     Location window: Storage information and properties
 
-AGV script executing
-=====================
-
-Drag and drop example
-======================
-
-Summary
-========
+Terminology
+------------
+- AGV
+- Vehicle
+- Loading unit
+- Load
+- Path planning
+- Route
+- RDE
+- RAT
+- Controller
+- Mission
+- Emulation
+- Operation

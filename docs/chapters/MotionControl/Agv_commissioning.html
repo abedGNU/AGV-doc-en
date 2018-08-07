@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Agv commissioning &mdash; Robox AGV 1.0.0 documentation</title>
+  <title>6. Agv commissioning &mdash; Robox AGV 1.0.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="4. More examples" href="../AgvManager/More_examples.html" /> 
+    <link rel="prev" title="5. More examples" href="../AgvManager/More_examples.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -82,26 +82,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../AgvManager/Overview.html">1. Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AgvManager/Rat.html">2. RAT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AgvManager/AgvManager.html">3. AgvManager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AgvManager/More_examples.html">4. More examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Agv commissioning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mgv-mechanical-and-electrical-part">5.1. MGV mechanical and electrical part</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dispan-display-panel">5.2. Dispan : Display panel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#commissioning">5.3. Commissioning</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#potentiometer">5.3.1. Potentiometer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#magnetic-sensors-and-canopen-modules">5.3.2. Magnetic sensors and Canopen modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#laser-scanner">5.3.3. Laser scanner</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#agv-parameters">5.3.4. AGV parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#register-backup">5.3.5. Register backup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#general-definitions">5.3.6. General definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AgvManager/agvScript.html">4. Agv scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AgvManager/More_examples.html">5. More examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Agv commissioning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mgv-mechanical-and-electrical-part">6.1. MGV mechanical and electrical part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dispan-display-panel">6.2. Dispan : Display panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commissioning">6.3. Commissioning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#potentiometer">6.3.1. Potentiometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#magnetic-sensors-and-canopen-modules">6.3.2. Magnetic sensors and Canopen modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laser-scanner">6.3.3. Laser scanner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agv-parameters">6.3.4. AGV parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#register-backup">6.3.5. Register backup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-definitions">6.3.6. General definitions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#agv-ecosystem">5.4. AGV ecosystem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#software-and-tools">5.4.1. Software and tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#agvmanager-rp1-communication-protocol">5.4.2. AgvManager-RP1 communication protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agv-ecosystem">6.4. AGV ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#software-and-tools">6.4.1. Software and tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agvmanager-rp1-communication-protocol">6.4.2. AgvManager-RP1 communication protocol</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#hardware-configuration">5.5. Hardware configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#program-description">5.6. Program description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-configuration">6.5. Hardware configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#program-description">6.6. Program description</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +150,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>5. Agv commissioning</li>
+      <li>6. Agv commissioning</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,13 +170,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="agv-commissioning">
-<h1>5. Agv commissioning<a class="headerlink" href="#agv-commissioning" title="Permalink to this headline">¶</a></h1>
+<h1>6. Agv commissioning<a class="headerlink" href="#agv-commissioning" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter we will see how to setup the parameters of the AGVs in RDE environment. Before doing it, we will have a look on mechanical and electrical part of the controller.</p>
 <div class="figure align-center" id="agvtop" style="width: 400px">
 <img alt="../../_images/agvtop.png" src="../../_images/agvtop.png" />
 </div>
 <div class="section" id="mgv-mechanical-and-electrical-part">
-<h2>5.1. MGV mechanical and electrical part<a class="headerlink" href="#mgv-mechanical-and-electrical-part" title="Permalink to this headline">¶</a></h2>
+<h2>6.1. MGV mechanical and electrical part<a class="headerlink" href="#mgv-mechanical-and-electrical-part" title="Permalink to this headline">¶</a></h2>
 <p>In this section we will describe one kind of AGV, that is MGV a  Magnetic guided vehicle. Some of the part of MGV are used in other kind of AGVs. The difference is in the way of guidance and localization. The MGV have to follow a magnetic tap, using magnetic sensors. In this example the MGV use 4 magnetic sensors. Each magnetic sensor have 16 bits of output. The sensor is connected to a digital to canopen module in order to communicate with the controller.</p>
 <p>In the middle of the MGV an RFID reader is placed. RFID cards are placed along the path on the magnetic tape, and are used as position feedback. The feedback is not continuous.</p>
 <div class="figure align-center" id="agvbottom" style="width: 400px">
@@ -191,7 +192,7 @@
 <p>The communication between the AGV and AgvManager is done via an Ethernet to wireless device. The device is configured as access point. And the Ethernet to wireless device in AgvManager is configured as client.</p>
 </div>
 <div class="section" id="dispan-display-panel">
-<h2>5.2. Dispan : Display panel<a class="headerlink" href="#dispan-display-panel" title="Permalink to this headline">¶</a></h2>
+<h2>6.2. Dispan : Display panel<a class="headerlink" href="#dispan-display-panel" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id1" style="width: 400px">
 <span id="dispanrde"></span><img alt="../../_images/dispanrde.png" src="../../_images/dispanrde.png" />
 <p class="caption"><span class="caption-text">Dispan in RDE Graphic panel</span></p>
@@ -204,7 +205,7 @@ change picture put real dispan</div>
 </div>
 </div>
 <div class="section" id="commissioning">
-<h2>5.3. Commissioning<a class="headerlink" href="#commissioning" title="Permalink to this headline">¶</a></h2>
+<h2>6.3. Commissioning<a class="headerlink" href="#commissioning" title="Permalink to this headline">¶</a></h2>
 <p>The first step in commissioning of any controller (plc or motion control) is to check the correct wiring of digital inputs and outputs. This step is relatively simple, using a variable monitor, online monitor or HMI we can debug the correct wiring of the signals following the electrical schematic.</p>
 <p>Fig <a class="reference internal" href="#iosignals"><span class="std std-ref">AGV IO signals</span></a> show a template panel of IO signals for debugging purposes.</p>
 <div class="figure align-center" id="id3" style="width: 400px">
@@ -215,7 +216,7 @@ RDE graphic panel</div>
 </div>
 <p>Once we are sure the electrical wiring is correct, we can proceed with tuning mechanical and eletrical components and software parameters.</p>
 <div class="section" id="potentiometer">
-<h3>5.3.1. Potentiometer<a class="headerlink" href="#potentiometer" title="Permalink to this headline">¶</a></h3>
+<h3>6.3.1. Potentiometer<a class="headerlink" href="#potentiometer" title="Permalink to this headline">¶</a></h3>
 <p>This AGV have 2 potentiometers, every one is connected to a set of two wheels. When a set of 2 wheels connected to the same mechanical axes, rotate with different speeds, the set of wheels will rotate arround the center of the wheels coordinate system shown in fig. <a class="reference internal" href="#agvtop2"><span class="std std-ref">AGV wheel coordinate system</span></a>. The angle of rotation is measured via a potentiometer connected to the origin of the coordinate system via an elastic joint.</p>
 <div class="figure align-center" id="id4" style="width: 400px">
 <span id="agvtop2"></span><img alt="../../_images/agvtop2.png" src="../../_images/agvtop2.png" />
@@ -293,7 +294,7 @@ RDE graphic panel</div>
 </div>
 </div>
 <div class="section" id="magnetic-sensors-and-canopen-modules">
-<h3>5.3.2. Magnetic sensors and Canopen modules<a class="headerlink" href="#magnetic-sensors-and-canopen-modules" title="Permalink to this headline">¶</a></h3>
+<h3>6.3.2. Magnetic sensors and Canopen modules<a class="headerlink" href="#magnetic-sensors-and-canopen-modules" title="Permalink to this headline">¶</a></h3>
 <p>The 16 bits magnetic sensors are connected to canopen modules. Address have to be given to canopen modules, this can be done using the dispan and connecting every module to the <code class="docutils literal notranslate"><span class="pre">CAN2</span></code> port of the controller, and the address is given one by one to the modules.</p>
 <p>The following figures show the steps of the procedure.</p>
 <div class="figure align-center" id="id13" style="width: 400px">
@@ -318,7 +319,7 @@ RDE graphic panel</div>
 </div>
 </div>
 <div class="section" id="laser-scanner">
-<h3>5.3.3. Laser scanner<a class="headerlink" href="#laser-scanner" title="Permalink to this headline">¶</a></h3>
+<h3>6.3.3. Laser scanner<a class="headerlink" href="#laser-scanner" title="Permalink to this headline">¶</a></h3>
 <p>Every laser scanner have 4 inputs and 4 outputs. These digital signals are 4 bit code to identify the active area and the requested area.</p>
 <p>The model of laser scanner we use, have 16 areas. The binary code is shown in fig. <a class="reference internal" href="#laserscannerpbs"><span class="std std-ref">PBS-03JN laser scanner area code</span></a>.</p>
 <div class="figure align-center" id="id18" style="width: 400px">
@@ -343,7 +344,7 @@ RDE graphic panel</div>
 </div>
 </div>
 <div class="section" id="agv-parameters">
-<h3>5.3.4. AGV parameters<a class="headerlink" href="#agv-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>6.3.4. AGV parameters<a class="headerlink" href="#agv-parameters" title="Permalink to this headline">¶</a></h3>
 <p>In task 1, AGV parameters file is loaded, the file name is written in register <code class="docutils literal notranslate"><span class="pre">nvsr(1)</span> <span class="pre">NVSR_PLANT_CONFIG_FILE</span></code>, by calling the function <code class="docutils literal notranslate"><span class="pre">LoadAgvConfig()</span></code>. We can create a parameter file called <code class="docutils literal notranslate"><span class="pre">params-rsm.stp</span></code> and assign the register <code class="docutils literal notranslate"><span class="pre">nsvr(1)</span></code> with file name.</p>
 <p>In the parameter file we can find, the name of the map to be used, mechanical parameters listing. <a class="reference internal" href="#lstmecparam"><span class="std std-ref">params-rsm.stp Mechanical parameter of the AGV</span></a>, etc.</p>
 <div class="literal-block-wrapper docutils container" id="lstmecparam">
@@ -362,14 +363,14 @@ RDE graphic panel</div>
 </div>
 </div>
 <div class="section" id="register-backup">
-<h3>5.3.5. Register backup<a class="headerlink" href="#register-backup" title="Permalink to this headline">¶</a></h3>
+<h3>6.3.5. Register backup<a class="headerlink" href="#register-backup" title="Permalink to this headline">¶</a></h3>
 <p>Non volatile registers are stored in memory, when RTE is loaded it retrieve the values from the memory. It is a good idea anyway to backup the values of  registers to a file, and load them in case of loss of memory.</p>
 <p>We can save the values of registers to a file by sending the command <code class="docutils literal notranslate"><span class="pre">uar</span> <span class="pre">/fb/lostreg.stp</span></code>. The file <code class="docutils literal notranslate"><span class="pre">lostreg.stp</span></code> is a file which contain desired registers to be saved. For example if we want to save only the values of regiters nvrr(140) and nvrr(162) we write in the file only these. When calling the command uar, only these registers are saved. There is a template file that can be used as a starting point.</p>
 <p>If RTE lose memory, it load the file <code class="docutils literal notranslate"><span class="pre">/fa/lostreg.stp</span></code> when needed, the operator have to confirm it. In the file <code class="docutils literal notranslate"><span class="pre">/fa/lostreg.stp</span></code> there is a link to the file <code class="docutils literal notranslate"><span class="pre">/fb/lostreg.stp</span></code>.</p>
 <p>For example if we have more than one agv, with different register values, we can call the command uar for each agv then copy the file <code class="docutils literal notranslate"><span class="pre">/fb/lostreg.stp</span></code> to our computer, e.g. <code class="docutils literal notranslate"><span class="pre">fsave</span> <span class="pre">-o</span> <span class="pre">/fb/lostreg.stp</span> <span class="pre">agv01/lostreg.stp</span></code> , this command copy the file from <code class="docutils literal notranslate"><span class="pre">/fb</span></code> to the folder <code class="docutils literal notranslate"><span class="pre">agv01</span></code> in the project directory.</p>
 </div>
 <div class="section" id="general-definitions">
-<h3>5.3.6. General definitions<a class="headerlink" href="#general-definitions" title="Permalink to this headline">¶</a></h3>
+<h3>6.3.6. General definitions<a class="headerlink" href="#general-definitions" title="Permalink to this headline">¶</a></h3>
 <p>Variables defined globally, at project level <a class="reference internal" href="#generaldefinitions"><span class="std std-ref">Variable definitions, project level</span></a>.</p>
 <div class="figure align-center" id="id22" style="width: 400px">
 <span id="generaldefinitions"></span><img alt="../../_images/generaldefinitions.png" src="../../_images/generaldefinitions.png" />
@@ -382,9 +383,9 @@ RDE graphic panel</div>
 </div>
 </div>
 <div class="section" id="agv-ecosystem">
-<h2>5.4. AGV ecosystem<a class="headerlink" href="#agv-ecosystem" title="Permalink to this headline">¶</a></h2>
+<h2>6.4. AGV ecosystem<a class="headerlink" href="#agv-ecosystem" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="software-and-tools">
-<h3>5.4.1. Software and tools<a class="headerlink" href="#software-and-tools" title="Permalink to this headline">¶</a></h3>
+<h3>6.4.1. Software and tools<a class="headerlink" href="#software-and-tools" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>The software needed to program and setup an AGV are:</dt>
 <dd><ul class="first last simple">
@@ -406,14 +407,14 @@ RDE graphic panel</div>
 </dl>
 </div>
 <div class="section" id="agvmanager-rp1-communication-protocol">
-<h3>5.4.2. AgvManager-RP1 communication protocol<a class="headerlink" href="#agvmanager-rp1-communication-protocol" title="Permalink to this headline">¶</a></h3>
+<h3>6.4.2. AgvManager-RP1 communication protocol<a class="headerlink" href="#agvmanager-rp1-communication-protocol" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="hardware-configuration">
-<h2>5.5. Hardware configuration<a class="headerlink" href="#hardware-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>6.5. Hardware configuration<a class="headerlink" href="#hardware-configuration" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="program-description">
-<h2>5.6. Program description<a class="headerlink" href="#program-description" title="Permalink to this headline">¶</a></h2>
+<h2>6.6. Program description<a class="headerlink" href="#program-description" title="Permalink to this headline">¶</a></h2>
 <p>The Agv program consist of 2 RTE projects: AGV program and antenna program. The antenna program is used only to program the address of canopen devices. The AGV program is used to control the agv and communicate with AgvManager.</p>
 <p>The agv program is written in R3 and in Object blocks. The R3 program consist of 7 tasks and one Rule. And the OB program consist of 2 object blocks: one for wheel control, with 2 instances, and one for AGV with one instance. The ob for Agv is changed depending on the type of the agv. In this example we will use the mgv object block for magnetic guided vehicles.</p>
 <p>Some logic is written in R3 other logic is written in OB. Important non volatile parameters are saved in the file <code class="docutils literal notranslate"><span class="pre">lostreg.stp</span></code>, this file is used as backup in case the memory of the agv is lost.</p>
@@ -431,7 +432,7 @@ RDE graphic panel</div>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../AgvManager/More_examples.html" class="btn btn-neutral" title="4. More examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../AgvManager/More_examples.html" class="btn btn-neutral" title="5. More examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
