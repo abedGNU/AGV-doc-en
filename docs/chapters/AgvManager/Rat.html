@@ -172,7 +172,7 @@
 <p>RAT can load <code class="docutils literal notranslate"><span class="pre">dxf</span></code> files as background, that can be used as a guide to design the desired map. Mainly RAT have lines, points, vehicles. These component will be explained later.</p>
 <p>In the properties of the project some settings have to be changed in order to change the behavior of the AGV motion, for example <code class="docutils literal notranslate"><span class="pre">Trasversal</span> <span class="pre">navigation</span></code> is set by default to <code class="docutils literal notranslate"><span class="pre">disabled</span></code>. When it is enabled the AGV can move trasversally to a line, and some options will be added to points that are not visible before. If some required point’s options are not visible, check if this property is not set to <code class="docutils literal notranslate"><span class="pre">enabled</span></code>.</p>
 <p>Properties depend on the type of guidance. Different guidance have different options. In RAT can be found Magnetic tape, Inertial and laser guided AGVs.</p>
-<div class="figure align-center" id="test" style="width: 600px">
+<div class="figure align-center" id="id2" style="width: 600px">
 <span id="figrat"></span><img alt="../../_images/rat.gif" src="../../_images/rat.gif" />
 <p class="caption"><span class="caption-text">RAT</span></p>
 <div class="legend">
@@ -192,7 +192,7 @@ A map is composed by lines, points, crosses and vehicles. During the design of a
 <h3>2.1.1. Vehicle<a class="headerlink" href="#vehicle" title="Permalink to this headline">¶</a></h3>
 <p>We can define the number of vehicles present in a plant, their shapes and dimensions. In our discussion we suppose a vehicle have an orientaion, a coordinate systems attached to it. We can imagine the vectors (arrow) <span class="math notranslate nohighlight">\(\overrightarrow{BF}\)</span> and <span class="math notranslate nohighlight">\(\overrightarrow{RL}\)</span> as coordinate system axis, i.e. <span class="math notranslate nohighlight">\(\overrightarrow{x}=\overrightarrow{OF}\)</span> and <span class="math notranslate nohighlight">\(\overrightarrow{y}=\overrightarrow{OL}\)</span>.</p>
 <p>If we have more than one Agv, it is convenient to set different colors, we can do it changing the property <code class="docutils literal notranslate"><span class="pre">Enabled</span> <span class="pre">Colour</span></code>. The default value is white <code class="docutils literal notranslate"><span class="pre">(255,255,255)</span></code>.</p>
-<div class="figure align-center" id="id2" style="width: 300px">
+<div class="figure align-center" id="id3" style="width: 300px">
 <span id="figagvorient"></span><img alt="../../_images/agvOrient.png" src="../../_images/agvOrient.png" />
 <p class="caption"><span class="caption-text">Vehicle orientation</span></p>
 </div>
@@ -200,21 +200,21 @@ A map is composed by lines, points, crosses and vehicles. During the design of a
 <div class="section" id="lines">
 <h3>2.1.2. Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h3>
 <p>A line have mainly 2 properties, beside its location and origin, <code class="docutils literal notranslate"><span class="pre">Navigation</span> <span class="pre">direction</span></code> and <code class="docutils literal notranslate"><span class="pre">vehicle</span> <span class="pre">orientation</span></code>. A line have to be seen as a vector, <span class="math notranslate nohighlight">\(\overrightarrow{L}\)</span>. For example a vector <span class="math notranslate nohighlight">\(\overrightarrow{OX}\)</span> has opposite direction of vector <span class="math notranslate nohighlight">\(\overrightarrow{XO}\)</span>, note that <span class="math notranslate nohighlight">\(\overrightarrow{OX}=-\overrightarrow{XO}\)</span>.</p>
-<div class="figure align-center" id="id3" style="width: 300px">
+<div class="figure align-center" id="id4" style="width: 300px">
 <img alt="../../_images/map_line.png" src="../../_images/map_line.png" />
 <p class="caption"><span class="caption-text">Line or vector. Direction of motion</span></p>
 </div>
-<div class="figure align-center" id="id4" style="width: 300px">
+<div class="figure align-center" id="id5" style="width: 300px">
 <img alt="../../_images/map_line_prop.png" src="../../_images/map_line_prop.png" />
 <p class="caption"><span class="caption-text">Line property. Navigation type can be set : side, longitudinal or both</span></p>
 </div>
 <p>Two directions of motion are allowed: Forward and backward. Forward direction is shown by the arrow on the line, that is the positive movement, from <span class="math notranslate nohighlight">\(O\)</span> to <span class="math notranslate nohighlight">\(X\)</span> represented by <span class="math notranslate nohighlight">\(\overrightarrow{OX}\)</span>.</p>
 <p>The vehicle can move longitudinally to the line, i.e. <span class="math notranslate nohighlight">\(\overrightarrow{BF}\)</span> parallel to the line, or transversally (side navigation), i.e. <span class="math notranslate nohighlight">\(\overrightarrow{BF}\)</span> perpendicular to the line.</p>
-<div class="figure align-center" id="id5" style="width: 300px">
+<div class="figure align-center" id="id6" style="width: 300px">
 <img alt="../../_images/agv_navigation_long.png" src="../../_images/agv_navigation_long.png" />
 <p class="caption"><span class="caption-text">Longitudinal navigation. <span class="math notranslate nohighlight">\(\overrightarrow{BF}\)</span> parallel to the line.</span></p>
 </div>
-<div class="figure align-center" id="id6" style="width: 300px">
+<div class="figure align-center" id="id7" style="width: 300px">
 <img alt="../../_images/agv_navigation_side.png" src="../../_images/agv_navigation_side.png" />
 <p class="caption"><span class="caption-text">Side or traversal navigation. <span class="math notranslate nohighlight">\(\overrightarrow{BF}\)</span> perpendicular to the line.</span></p>
 </div>
@@ -224,26 +224,26 @@ A map is composed by lines, points, crosses and vehicles. During the design of a
 <h3>2.1.3. Generic point<a class="headerlink" href="#generic-point" title="Permalink to this headline">¶</a></h3>
 <p>There are 6 <a class="reference internal" href="#figkindpoints"><span class="std std-ref">kind of points</span></a>. In term of object oriented approach we may say that all points derive from the base class Point.
 Those points share the following basic properties: Quote (position on the line), speed of the vehicle beginin from the point toward positive direction, direction (as a reference the line where the point is placed) and orientation (referred to the vehicle).</p>
-<div class="figure align-center" id="id7" style="width: 300px">
+<div class="figure align-center" id="id8" style="width: 300px">
 <span id="figkindpoints"></span><img alt="../../_images/map_points.png" src="../../_images/map_points.png" />
 <p class="caption"><span class="caption-text">kind of points</span></p>
 </div>
 <p>Genric points are used mainly to build the path of the vehicle. It is not necessary to assign a code to a generic point. AgvManager automatically assign codes to Generic points that don’t have one.</p>
 <p>The following discussion can be applied to all kind of points, that have the properties direction and orientation (generic, user, cross, magnet, start, battery).</p>
-<div class="figure align-center" id="id8" style="width: 300px">
+<div class="figure align-center" id="id9" style="width: 300px">
 <span id="figgenericpoint"></span><img alt="../../_images/map_point_gen_prop.png" src="../../_images/map_point_gen_prop.png" />
 <p class="caption"><span class="caption-text">Generic point property</span></p>
 </div>
 <p>There are three allowed directions to approach and leave a point: <code class="docutils literal notranslate"><span class="pre">Forward(F)</span></code>, <code class="docutils literal notranslate"><span class="pre">Backward</span> <span class="pre">(R)</span></code> and <code class="docutils literal notranslate"><span class="pre">Anydirection</span> <span class="pre">(X)</span></code>.
 The allowed direction of point e.g. <span class="math notranslate nohighlight">\(P_{1}\)</span> is meant as the direction of motion of the vehicle starting from this point toward another point in the positive direction of the line.</p>
 <p>For example, if we set the allowed direction of point <span class="math notranslate nohighlight">\(P_{1}\)</span> to Forward , and we want to move from <span class="math notranslate nohighlight">\(P_{1}\)</span> to point <span class="math notranslate nohighlight">\(P_{2}\)</span> placed at a coordinate greater than <span class="math notranslate nohighlight">\(P_{1}\)</span>, the motion is allowed. But the motion from <span class="math notranslate nohighlight">\(P_{2}\)</span> to <span class="math notranslate nohighlight">\(P_{1}\)</span> is not allowed. The direction in point <span class="math notranslate nohighlight">\(P_{1}\)</span> assign the direction of motion starting from itself toward positive coordiantes, where it will be interrupted by another point.</p>
-<div class="figure align-center" id="id9" style="width: 300px">
+<div class="figure align-center" id="id10" style="width: 300px">
 <span id="figpointdirection"></span><img alt="../../_images/pointdirection.png" src="../../_images/pointdirection.png" />
 <p class="caption"><span class="caption-text">Line from left to right.</span></p>
 <div class="legend">
 <span class="math notranslate nohighlight">\(P_{1}\)</span> Forward direction, <span class="math notranslate nohighlight">\(P_{2}\)</span> Backward direction. Motion from <span class="math notranslate nohighlight">\(P_{1}\)</span> to <span class="math notranslate nohighlight">\(P_{2}\)</span> is allowed, from <span class="math notranslate nohighlight">\(P_{2}\)</span> to <span class="math notranslate nohighlight">\(P_{1}\)</span> is not allowed. Motion from <span class="math notranslate nohighlight">\(P_{2}\)</span> to <span class="math notranslate nohighlight">\(P_{3}\)</span> is forbidden. Motion from <span class="math notranslate nohighlight">\(P_{3}\)</span> to <span class="math notranslate nohighlight">\(P_{2}\)</span> is allowed</div>
 </div>
-<div class="figure align-center" id="id10" style="width: 300px">
+<div class="figure align-center" id="id11" style="width: 300px">
 <span id="figmap1"></span><img alt="../../_images/map1.png" src="../../_images/map1.png" />
 <p class="caption"><span class="caption-text">Point allowed direction</span></p>
 <div class="legend">
@@ -259,7 +259,7 @@ The allowed direction of point e.g. <span class="math notranslate nohighlight">\
 <p>A user point should have the <code class="docutils literal notranslate"><span class="pre">code</span></code> property not empty, but a generic point code could be empty. A point belong to a line, if we have for example a matrix of points and lines, let’s suppose the points belong to the horizontal line, if we need to move vertically from a point to another, we can’t do it, we need a cross point.</p>
 <p>User kind ???????????</p>
 <p>Side ?????????????</p>
-<div class="figure align-center" id="id11" style="width: 300px">
+<div class="figure align-center" id="id12" style="width: 300px">
 <span id="figuserpoint"></span><img alt="../../_images/map_point_user.png" src="../../_images/map_point_user.png" />
 <p class="caption"><span class="caption-text">User point properties</span></p>
 </div>
@@ -270,7 +270,7 @@ The allowed direction of point e.g. <span class="math notranslate nohighlight">\
 <p>CBats Kind ???????</p>
 <p>Side ????????????</p>
 <p>Display ?????????????</p>
-<div class="figure align-center" id="id12" style="width: 300px">
+<div class="figure align-center" id="id13" style="width: 300px">
 <span id="figcbatpoint"></span><img alt="../../_images/map_point_cbats.png" src="../../_images/map_point_cbats.png" />
 <p class="caption"><span class="caption-text">Battery point properties</span></p>
 </div>
@@ -283,7 +283,7 @@ The allowed direction of point e.g. <span class="math notranslate nohighlight">\
 <p>Forward mode ?????????/</p>
 <p>Backword mode ??????????</p>
 <p>A magnet point must be installed at 0.5 m from a curve. For example if we have a cross of type curve, and 1 meter of takeoff distance, 2 magnet points have to be installed at least at 1.5m from the cross.</p>
-<div class="figure align-center" id="id13" style="width: 300px">
+<div class="figure align-center" id="id14" style="width: 300px">
 <span id="figmagnetpoint"></span><img alt="../../_images/map_point_magnet.png" src="../../_images/map_point_magnet.png" />
 <p class="caption"><span class="caption-text">Magnet point properties</span></p>
 </div>
@@ -294,7 +294,7 @@ The allowed direction of point e.g. <span class="math notranslate nohighlight">\
 In one map we may have more than one start point for one vehicle, pay attention to set the property <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">index</span></code> that should be unique number. If the index is not unique for start points RAT doesn’t give any error (like for user points), but AgvManager will give an error when loading the map.</p>
 <p>A reference position is composed from one start point and 2 magnet points. The position (quote) of the start point should be the same of one of the 2 magnet points.</p>
 <p>Starting orientation ??????????</p>
-<div class="figure align-center" id="id14" style="width: 300px">
+<div class="figure align-center" id="id15" style="width: 300px">
 <span id="figmap-point-start"></span><img alt="../../_images/map_point_start.png" src="../../_images/map_point_start.png" />
 <p class="caption"><span class="caption-text">Start point properties</span></p>
 </div>
@@ -302,7 +302,7 @@ In one map we may have more than one start point for one vehicle, pay attention 
 <div class="section" id="cross">
 <h3>2.1.8. Cross<a class="headerlink" href="#cross" title="Permalink to this headline">¶</a></h3>
 <p>A cross is the intersection of 2 lines. An intersection have 4 quadrants. You can establish permission for vehicle in one or more quadrants. Three kinds of permission are available: <code class="docutils literal notranslate"><span class="pre">Forbidden</span></code>, <code class="docutils literal notranslate"><span class="pre">curve</span></code> and <code class="docutils literal notranslate"><span class="pre">rotation</span></code>.</p>
-<div class="figure align-center" id="id15" style="width: 300px">
+<div class="figure align-center" id="id16" style="width: 300px">
 <span id="figcross"></span><img alt="../../_images/cross.png" src="../../_images/cross.png" />
 <p class="caption"><span class="caption-text">A cross is a point that joint two lines.</span></p>
 <div class="legend">
@@ -329,14 +329,14 @@ It behave like a point on every line, orientation and direction can be set for e
 <li>A curve should have 2 magnets placed at least at 0.5 meter from the end of the curve.</li>
 <li>User points and generic points should be placed after the magnet points that form the curve.</li>
 </ul>
-<div class="figure align-center" id="id16" style="width: 300px">
+<div class="figure align-center" id="id17" style="width: 300px">
 <span id="figcurve-points"></span><img alt="../../_images/curve_points.png" src="../../_images/curve_points.png" />
 <p class="caption"><span class="caption-text">Generic points and user points should be placed outside a curve, i.e. after a magnet point</span></p>
 </div>
 </div>
 <div class="section" id="example">
 <h2>2.3. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id17" style="width: 400px">
+<div class="figure align-center" id="id18" style="width: 400px">
 <span id="demomap"></span><img alt="../../_images/demomap.png" src="../../_images/demomap.png" />
 <p class="caption"><span class="caption-text">Demo map</span></p>
 <div class="legend">

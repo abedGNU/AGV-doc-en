@@ -82,7 +82,20 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">1. Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Rat.html">2. RAT</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. AgvManager</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. AgvManager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">3.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">3.2. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agv-configurator">3.3. AGV configurator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agvmanager-interface">3.4. AgvManager interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agv-emulation">3.4.1. AGV emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#point-windows-property">3.4.2. Point windows property</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#agv-script-executing">3.5. AGV script executing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drag-and-drop-example">3.6. Drag and drop example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">3.7. Summary</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="More_examples.html">4. More examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MotionControl/Agv_commissioning.html">5. Agv commissioning</a></li>
 </ul>
@@ -151,7 +164,131 @@
             
   <div class="section" id="agvmanager">
 <h1>3. AgvManager<a class="headerlink" href="#agvmanager" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference download internal" href="../../_downloads/AllFunctions_AgvHandling.xs" download=""><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">example</span> <span class="pre">script</span></code></a></p>
+<div class="section" id="overview">
+<h2>3.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#figagvmanager"><span class="std std-ref">AgvManager</span></a> have 2 software components: AGV manager it self and AGV configurator.
+In AGV configurator are set some parameters like the map file directory, script directory, communication with the AGVs controllers, PLC communication and IO definition, database communication, emulator enabling, etc.</p>
+<p>AGV manager will load the parameters set by Agv configurator, and main execute the script written for the specified plant. In AGV manager can be shown the map and motion simulation and modify the script. The script is written in XScript language (Robox scripting language) and executed by AGV manager.</p>
+<div class="figure align-center" id="id2" style="width: 600px">
+<span id="figagvmanager"></span><img alt="../../_images/agvManager.gif" src="../../_images/agvManager.gif" />
+<p class="caption"><span class="caption-text">AgvManager</span></p>
+<div class="legend">
+AGV Manager main window</div>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>3.2. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The installation of AgvManger is straightforward, like any program in Microsoft Windows. AgvConfigurator is installed automatically with AgvManager.</p>
+<p>In order to get the report from AgvManager a database should be installed. You can install MySql community version.</p>
+<p>Once installed, a schortcut to AgvManager and AgvConfigurator have to be done. In the properties of the application, in <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">in</span></code> put the location of the folder where your projects are located, <a class="reference internal" href="#figagvappproperties"><span class="std std-ref">Application properties</span></a>.</p>
+<div class="figure align-center" id="id3" style="width: 400px">
+<span id="figagvappproperties"></span><img alt="../../_images/agvappproperties.png" src="../../_images/agvappproperties.png" />
+<p class="caption"><span class="caption-text">Application properties</span></p>
+<div class="legend">
+Change the <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">in</span></code> field to your projects directory</div>
+</div>
+</div>
+<div class="section" id="agv-configurator">
+<h2>3.3. AGV configurator<a class="headerlink" href="#agv-configurator" title="Permalink to this headline">¶</a></h2>
+<p>AGV configurator is a standalone program that create a <code class="docutils literal notranslate"><span class="pre">.fdoc</span></code> configuration file for AGV manager. One folder can contain more than one configuration file.</p>
+<p>Project folder should be placed in the directory specified in the field <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">in</span></code> of the application properties, otherwise it will not work. By default the start point of the application is its installation directory.</p>
+<p>The script file should be in the first level of the project folder, it can’t be placed in subdirectories, for example <code class="docutils literal notranslate"><span class="pre">appStartDir/Project01/scripts/main.xs</span></code> is not allowed, it should be <code class="docutils literal notranslate"><span class="pre">appStartDir/Project01/main.xs</span></code>.</p>
+<p>The following animation illustrate how to create an <a class="reference internal" href="#fignewprojectagv"><span class="std std-ref">AGV new project</span></a>:</p>
+<div class="figure align-center" id="id4" style="width: 600px">
+<span id="fignewprojectagv"></span><img alt="../../_images/newProjectAgv.gif" src="../../_images/newProjectAgv.gif" />
+<p class="caption"><span class="caption-text">AGV new project</span></p>
+<div class="legend">
+AgvConfigurator, creating new project</div>
+</div>
+<p>In AGV configurator, General tab, the <code class="docutils literal notranslate"><span class="pre">.xs</span></code> script file is selected. The script have to be created by an external editor. It is enough to give any name to the executable file with <code class="docutils literal notranslate"><span class="pre">.xb</span></code> extension. When AgvManager compile the <code class="docutils literal notranslate"><span class="pre">xs</span></code> file, the <code class="docutils literal notranslate"><span class="pre">xb</span></code> file will be created automatically.</p>
+<div class="figure align-center" id="id5" style="width: 400px">
+<span id="figconfigscript"></span><img alt="../../_images/agvConfigGeneral1.png" src="../../_images/agvConfigGeneral1.png" />
+<p class="caption"><span class="caption-text">General tab</span></p>
+</div>
+<p>In AGV configurator, Map tab, the <code class="docutils literal notranslate"><span class="pre">.map</span></code> file is selected. In order to view the user points, you have to set the width and height of it, otherwise user points are not viewed. It is convenient to represent user points as rectangles, not squares. If you need to rotate the map you can change <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">1</span> <span class="pre">angle</span></code>.</p>
+<div class="figure align-center" id="id6" style="width: 400px">
+<span id="figconfigmap"></span><img alt="../../_images/agvConfigMap.png" src="../../_images/agvConfigMap.png" />
+<p class="caption"><span class="caption-text">Map tab</span></p>
+</div>
+<p>AGV configurator. AGV tab, where communication parameters with the AGVs are set. Note that <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">adresses</span></code> are sequential.</p>
+<div class="figure align-center" id="id7" style="width: 400px">
+<span id="figconfigagv"></span><img alt="../../_images/agvConfigAgv.png" src="../../_images/agvConfigAgv.png" />
+<p class="caption"><span class="caption-text">AGV tab</span></p>
+</div>
+</div>
+<div class="section" id="agvmanager-interface">
+<h2>3.4. AgvManager interface<a class="headerlink" href="#agvmanager-interface" title="Permalink to this headline">¶</a></h2>
+<p>AgvManager have one menu bar, one <a class="reference internal" href="#figtoolbar"><span class="std std-ref">tool bar</span></a>, one status bar, map visualization and different tabs [Fx].</p>
+<p>In the <a class="reference internal" href="#figtoolbar"><span class="std std-ref">tool bar</span></a>, we can find the button: Vehicle status, Commands insertion, Access level, color type, Zoom, Agv emulation, user define forms.</p>
+<div class="figure align-center" id="id8" style="width: 400px">
+<span id="figtoolbar"></span><img alt="../../_images/toolbar.png" src="../../_images/toolbar.png" />
+<p class="caption"><span class="caption-text">tool bar</span></p>
+</div>
+<p>In the status bar we can see some message from the script, date and time, and current access level.</p>
+<div class="section" id="agv-emulation">
+<h3>3.4.1. AGV emulation<a class="headerlink" href="#agv-emulation" title="Permalink to this headline">¶</a></h3>
+<p>If the flag <code class="docutils literal notranslate"><span class="pre">emuagv.dll</span> <span class="pre">Vehicles</span> <span class="pre">emulation</span></code> in AgvConfigurator is checked, we can emulate the AGV in AgvManager. The windows of the emulation can be opened via the button <code class="docutils literal notranslate"><span class="pre">agv</span> <span class="pre">emulation</span> <span class="pre">control</span></code>.</p>
+<p>The <a class="reference internal" href="#figagvemu"><span class="std std-ref">Emulation window</span></a> shows the status of the Agv, groupbox <code class="docutils literal notranslate"><span class="pre">Status</span></code>, where are viewed the 32 Vehicle Status flags (XVehicleInfo.uStatus). The first 4 flags are written by the vehicle controller and the others can be defined by user in the vehicle controller.</p>
+<div class="figure align-center" id="id9" style="width: 400px">
+<span id="figagvemu"></span><img alt="../../_images/agvEmulation.png" src="../../_images/agvEmulation.png" />
+<p class="caption"><span class="caption-text">Emulation window</span></p>
+<div class="legend">
+We can see Agv status flags and other informations. The progress bar indicate the consumed power of the battery, not the remaining power, e.g. 100% is battery empty.</div>
+</div>
+<dl class="docutils">
+<dt>The first 4 bits (flags) are:</dt>
+<dd><ul class="first last simple">
+<li>Power enabled</li>
+<li>Execution command</li>
+<li>Charging battery in progress</li>
+<li>Load present, or Unit load present</li>
+</ul>
+</dd>
+</dl>
+<p>These flags correspond to:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Vehicle status fags</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>// Vehicle status flags, bit mask 2^n.
+// 4 least significant bits
+$define VST_POTENZA_ATTIVA   1 // Power active, mask bit 0
+$define VST_EXEC_COMANDO     2 // executing command, mask bit 1
+$define VST_CARICA_INCORSO   4 // charge in progress, mask bit 2
+$define VST_CARICO_PRESENTE  8 // load present, mask bit 3
+</pre></div>
+</div>
+</div>
+<p>The Battery box, indicate the amount of power consumed, not the remaining one. For example if the status is 100%, this mean the battery is empty, if the progress bar indicate 20%, this mean the remaining power is 80%. The value of the remaining power is shown in the <code class="docutils literal notranslate"><span class="pre">Battery</span> <span class="pre">capacity</span></code> progress bar in the tab <code class="docutils literal notranslate"><span class="pre">Vehicle</span> <span class="pre">informations</span> <span class="pre">[F3]</span></code>.</p>
+<p>To emulate the Agv, first the Agv emulation should be active, state shown in tab <code class="docutils literal notranslate"><span class="pre">Vehicles</span></code> in the window <code class="docutils literal notranslate"><span class="pre">Agv</span> <span class="pre">emulation</span> <span class="pre">control</span></code>. Then in the <code class="docutils literal notranslate"><span class="pre">Vehicle</span> <span class="pre">x</span></code> tab, where <code class="docutils literal notranslate"><span class="pre">x</span></code> is the AGV number, the operating mode can be selected, and the status can be emulated. The Agv should be in automatic and power is enabled in order to move the Agv.
+For example, if we set the flag <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">present</span></code> to one, the agv behave depending on the script logic. If the load is a loading unit and there is a load in some station to take out, the Agv will go to that station. Or for example if the load is properly the final product the agv may transport it to some unloading station.</p>
+</div>
+<div class="section" id="point-windows-property">
+<h3>3.4.2. Point windows property<a class="headerlink" href="#point-windows-property" title="Permalink to this headline">¶</a></h3>
+<p>User points can be viewed as rectangles, where the dimensions are set in AgvConfigurator. A <code class="docutils literal notranslate"><span class="pre">CBat</span></code> (Battery point) is shown as a battery icon. On a double click on a user point or battery point a window is opened, see fig.:ref:<cite>figLocStorageInfo</cite>.</p>
+<div class="figure align-center" id="id10" style="width: 400px">
+<span id="figlocstorageinfo"></span><img alt="../../_images/locStorageInfo.png" src="../../_images/locStorageInfo.png" />
+<p class="caption"><span class="caption-text">Storage informations tab</span></p>
+<div class="legend">
+Storage informations: Load information are shown, timestamp of loading, load type</div>
+</div>
+<p>In the <a class="reference internal" href="#figlocstorageinfo"><span class="std std-ref">Storage informations tab</span></a>, changing the type we can see the description associated to it, e.g. Type 1 is an empty <code class="docutils literal notranslate"><span class="pre">loading</span> <span class="pre">unit</span></code>. The spin box (numeric updown control) is used to show only the type, the type is a combination of the checkboxes.</p>
+<p>Properties assigned by the function <code class="docutils literal notranslate"><span class="pre">AddIntProperty()</span></code>, are shown in the <a class="reference internal" href="#figlocationproperties"><span class="std std-ref">Properties tab</span></a>.</p>
+<div class="figure align-center" id="id11" style="width: 400px">
+<span id="figlocationproperties"></span><img alt="../../_images/locProperty.png" src="../../_images/locProperty.png" />
+<p class="caption"><span class="caption-text">Properties tab</span></p>
+<div class="legend">
+Location window: Storage information and properties</div>
+</div>
+</div>
+</div>
+<div class="section" id="agv-script-executing">
+<h2>3.5. AGV script executing<a class="headerlink" href="#agv-script-executing" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="drag-and-drop-example">
+<h2>3.6. Drag and drop example<a class="headerlink" href="#drag-and-drop-example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="summary">
+<h2>3.7. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 

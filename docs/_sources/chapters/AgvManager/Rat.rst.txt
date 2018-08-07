@@ -17,7 +17,7 @@ Properties depend on the type of guidance. Different guidance have different opt
 .. _figrat:
 .. figure:: images/rat/rat.gif
     :align: center
-    :name: test
+    :name:
     :figwidth: 600px
 
     RAT
