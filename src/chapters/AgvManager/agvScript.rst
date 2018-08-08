@@ -5,9 +5,442 @@ Agv scripting
 
 AGV script executing
 =====================
+AGV manager can be compared to a plc (hardware and firmware) and the script to a plc program. The firmware (kernel) is the same in all plants (beside updates and new functionality) and the script change from plant to another.
+
+AGV scripts are written in Xscript language. Xscript have some OOP properties (creating classes and objects), some event handling (e.g. mouse move event) and callback functions.
+
+Fundamental concepts
+---------------------
+Callback functions are called automatically by AgvManager. A list of callback functions can be found in the documentation **x-script interface, Modules, Estensione x-script per AgvManager, Functions called by AgvManager (callbacks)**.
+
+For example the callback function ``OnApplicationStart() : bool`` is called once, at the first execution of the script, and the function ``OnApplicationStop() : bool`` is called when the script execution is stopped. Those are the entry and exit points of the script.
+
+We can immagine the script execution like the following ``C`` code:
+
+.. code-block:: c
+
+  void main(...)
+  {
+    OnApplicationStart(); // initialization
+
+    While(1)
+    {
+      // plant logic
+    }
+
+    OnApplicationStop(); // Program terminated
+  }
+
+An example of mouse event handling is the function ``onAgvDroppedToPoint (uint uagv, uint upointid, uint orientation)``.
+When the agv is dragged and dropped to a point, AgvManager call automatically the function ``onAgvDroppedToPoint()`` and the code implemented will be executed. As input parameters, the agv index (agv 1 have index 0), destination point and orientation are passed by AgvManager itself.
+
+In the following section we will see when other callback function are called by AgvManager.
+
+Some variable definitions (using ``#define`` keyword) can be found in the documentation **x-script interface, Modules, Estensione x-script per AgvManager, Funzioni per la gestione degli agv**. For example the AGV operative modes can be find with the prefix ``MOD_``, e.g. ``MOD_AUTOMATICO``.
+
+The following concepts have to be understood before proceeding: Mission, MACRO, MICRO and operations.
+
+Let's say a vehicle have to go from :math:`P_{1}` to :math:`P_{2}`. This can be considered a mission. A Mission is started by calling ``agvStartMission(agv id, missionCode, mission description)}`` and terminated by calling ``agvStopMission(agv id)``.
+
+A mission can be composed from different ``MACROs``. Let's say a ``MACRO`` is a macro operation that subdivide the mission. For example our mission can have 3 different MACROs. If the AGV is charging the battery, we have to stop charging (if the energy is enough to execute the whole mission), move to destination, communicate the end of the mission.
+
+Using the 2 defined constants by AgvManager our mission is composed from : ``MAC_CHARGE_STOP``, ``MAC_END`` and another macro that we can define using the ``$define keyword MAC_MOVE_TO_P``.
+It is better to define our constants from 100 to avoid errors in the program logic. For example if the already defined constant ``MAC_END`` have value 10, and our constant ``MAC_MOVE_TO_WP`` have value 10, the compiler will not give errors and the agv will behave as is not expected.
+
+AgvManager have in memory a list(array) of the MACROs to be executed. In the list are saved the ``agv number/id``, ``MACRO code/id`` and other 4 parameters.
+
+When the function:
+
+.. code-block:: none
+
+  agvaddmacro	(	uint 	uagv,
+  	uint 	ucode,
+  	int 	ipar1 = 0,
+  	int 	ipar2 = 0,
+  	int 	ipar3 = 0,
+  	int 	ipar4 = 0
+  	)
+
+is called, the new MACRO is queued at the end of the list.
+
+A MACRO is composed from MICROs. Let's say, low level micro instructions to be executed by the AGV. There are different types of MICRO, can be found in the constant defintions with prefix ``MIC_``. For example ``MIC_MOVE`` is a MICRO that handle the motion instruction to the AGV.
+
+A micro is registered (ask to be executed) by calling ``AgvRegisterSystemBloccante``, ``agvRegisterSystemPassante``, ``AgvRegisterOperation``, etc.
+
+An operation is a type of MICRO, a typical kind of operations are loading and unloading, and can be performed on user points.
+More about MICRO and operations later and the commands sent to the agv in order to execute orders from AgvManager. Remember that not all MIC instruction send commands to the agv.
+
+
+Main loop execution
+-------------------
+The following is a simplified explanation of the main loop of and AGV script, which is in execution behind the scene. A more complex scenario is shown in fig. :ref:`figmainLoop`.
+
+.. _figmainLoop:
+.. figure:: images/agvmanager/mainloop.png
+    :align: center
+    :name:
+    :figwidth: 600px
+
+    Main loop execution
+
+When the script is executed the first time, the function ``OnApplicationStart()`` is called. In this function you can initialize some variables and set some parameters. After that AgvManager wait for events e.g. mouse events, or operating mode change. And continue to execute some other functions.
+
+In the case we have more than one Agv, the execution of the functions is sequential. This means that the set of functions of Agv 1 are called first, then those of Agv 2, then Agv 3, etc. In other words, the flowchart in fig. :ref:`figmainLoop` and fig. :ref:`figmissionExec` are executed starting from the first Agv until the last one in sequence, this flow is repeated always.
+
+Let's see a simple case. The AGV is in automatic mode ``MOD_AUTOMATIC``, and there is no mission in progress. If the AGV is enabled, AgvManager call automatically the callback function ``onNextMission()``, where the programmer have implemented a logic to register the next mission to be executed. When a mission is in progress, AgvManager wait (wait doesn't mean stop script execution) till the end of the mission in order to call again ``onNextMission()``.
+
+Mission execution
+------------------
+A mission is a set of MACROs. There is a list of MACROs, where the order of execution is assigned.
+A mission can be assigned typically inside the callback function ``onNextMission()``, and started by calling ``AgvStartMission()``. A mission can be also assigned in any other function, but mainly is better to assign it in this function.
+
+If the list of MACROs is not empty, the effective execution of the mission begin otherwise the old MICRO continue to execute until the end.
+
+We take only one case, if the ``MACRO list`` is not empty, the function ``onExpandMacro()`` is called by AgvManager.
+Then ``onExecuteMicro()`` is called. At the last call of ``onExecuteMicro()`` the paramater ``bLastCall`` is assigned to true.
+
+Fig. :ref:`figmissionExec` show a flow chart about the mission execution.
+That is a single step of the mission. We have to imagine that AgvManager continue to call the flowchart like a plc, cyclically.
+
+.. _figmissionExec:
+.. figure:: images/agvmanager/missionExec.png
+    :align: center
+    :name:
+    :figwidth: 600px
+
+    Mission execution
 
 Drag and drop example
 ======================
+Let's consider a simple example. We have to write a script that react to mouse events from user. The vehicle have to move from one point to another.
+
+First let's make a simple map, fig.:ref:`figmapLine`, with one line :math:`L_{1}` and two generic points :math:`P_{10}` and :math:`P_{20}`. This script will work on any map.
+After the configuration with AgvConfigurator, we open AgvManager in order to write the script and simulate.
+
+.. note:: After any modification of the script, AgvManager must be restarted (closed then opened).
+
+.. _figmapLine:
+.. figure:: images/agvmanager/mapLine.png
+    :align: center
+    :name:
+    :figwidth: 600px
+
+    Agv simple map, for drag and drop example. One line and two generic points.
+
+A simple program like this, should have at least the following callback functions:
+
+.. code-block:: none
+
+  OnApplicationStart() : bool
+
+  OnAgvDroppedToPoint(uint uAgv, uint uUser)
+
+  OnExpandMacro(uint uAgv, uint uMission, uint iMacroCode, int iPar1, int iPar2, int iPar3, int) : bool
+
+  OnExecuteMicro(uint uAgv, bool bLastCall, int iMicroCode, int iPar0, int iPar1, int iPar2, int, int, int userId, int iMission, int) : bool
+
+  OnAbortMission(uint uAgv)
+
+For simplicity we don't implement our own functions. Attached to this document will be provided the example we discuss here, and an equivalent example where other functions and files were added in order to keep the modularity.
+
+The modular example is organized as follow: 3 files, 5 callback functions, 2 user-defined functions and some variable and constant definitions.
+A file called main.xs contain the inclusion of the other 2 files. A file called agvEventFunctions.xs where callback functions are implemented.
+A file called common.xs where common functions and variables definitions are implemented. This strucutre is meant to be a template for future projects, as many functions can be reused. Of course other files and functions can be implemented. The structure of any project should be modular, portable and reusable.
+
+The single file example have 5 callback functions and some constant definitions. By convention, constants are written using capital letters.
+We will discuss the functions in order of execution. The function ``onAbortMission()`` is called when a mission is aborted, it will be discussed at the end.
+
+:download:`Complete script source code <listing/demo_drag_drop/agvDropToPoint_v0.xs>`
+
+onApplicationStart()
+--------------------
+The implementation of this function is shown in listing :ref:`lstonApplicationStart`. As we say before, this is the first function called by agvManager.
+First we create a variable ``mpar`` of type ``XMapParms``. This is a structure that will contain informations about the vehicle.
+By the function ``agvGetMapParams(xmapparams &)`` we read the existing data from AgvManager and we initialize the variable ``mpar`` with those data.
+We change some parameter using the dot operator of the structure, for example we set the dimension of the vehicle i.e. ``mpar.setSymmetricalVehicleDimension(length, width)``. After we apply the changes to AgvManager using the function ``AgvSetMapParams(@mpar)``.
+
+.. literalinclude:: listing/demo_drag_drop/agvDropToPoint_v0.xs
+  :caption: onApplicationStart()
+  :name: lstonApplicationStart
+  :lines: 107-147
+
+When the execution of this fucntion is done, AgvManager wait for some event. Let's suppose, the user drag the agv and drop it into a point, in this case the event function ``OnAgvDroppedToPoint`` is called.
+
+OnAgvDroppedToPoint(uint uAgv, uint uPointId)
+----------------------------------------------
+The call of this function is a response of mouse event. There are other mouse events like ``onAgvDroppedToLine()``.
+In this function we set the behavior of the agv, what the agv have to do when it is dragged e.g. from :math:`P_{10}` and dropped to point :math:`P_{20}`.
+
+First let's put some requirements e.g. the agv should be in automatic mode, it should not be enabled, there is no mission in progress.
+If those conditions are met the agv can move from one point to another. The code to control such conditions is self-explainatory in listing. :ref:`lstOnAgvDroppedToPoint`.
+
+This example will have only one mission, moving from one point to another. A mission should have at least one MACRO, every mission should have ``MAC_END``. This MACRO inform the kernel that it reach the end of the mission.
+There are some predefined constants for system used MACROs, they can be found in the documentation with the prefix ``MAC_``.
+We can also define our own MACROs using the keyword ``Define``. It is a good practice to use numbers from 100, every MACRO and mission should have a unique identifier.
+
+Let's define our mission and a new MACRO:
+
+.. code-block:: none
+
+  ; Mission null, ther is no mission
+  $define MIS_NULL                0
+
+  ; Mission move to point
+  $define MIS_TO_POINT            14
+
+  ; MACRO Movement to waypoint
+  $define MAC_MOVE_TO_WP          100
+
+In this case the mission **MIS_TO_POINT** is composed from 2 MACROs. In order the **MACRO list** will have 2 elements:
+- MAC_MOVE_TO_WP
+- MAC_END
+
+Before starting a new mission we check if there is a mission in progress.
+We call the function ``AgvActualMissionCode(uint uAgvId)``, this function return the id of the mission in progress.
+If it return ``zero``, it means there is no mission in progress. We have already define a constant **MIS\_NULL** as zero.
+In the code we can write ```if(AgvActualMissionCode(uAgv)=0)``, but it is always more readable when using names instead of numbers, so instead of ``0`` we use ``MIS\_NULL``.
+
+If there is no mission in progress, we can start the mission **MIS\_TO\_POINT** by calling the function::
+
+  bool AgvStartMission(uint uAgvId, uint CodeMissione, string sMissioneDescription)
+
+this function return ``true`` if the mission is in progress.
+
+Now we have to fill the agv **MACRO list** with our 2 MACROs, by calling the function::
+
+  bool agvAddMacro(uint uAgv,uint uCodeMACRO, int ipar1=0,int ipar2=0, int iapr3=0, int ipar4=0)
+
+The ``iparX`` have 0 as default value.
+
+The first MACRO is **MAC\_MOVE\_TO\_WP**, this is a motion MACRO. So we have to build the path of the agv by calling the function ``AgvAddWaypoint()``, this function takes as parameters the agv id, the point id and direction and return an id of the point.
+
+Then the **MAC\_MOVE\_TO\_WP** can be added to the list, by calling ``agvAddMacro()``, giving it as ``ipar1`` the return value of the function ``AgvAddWaypoint()`` and as ``ipar2`` a flag to concatenate the execution of the next MACRO.
+Then the macro **MAC\_END** that end our mission is add to the macro's list.
+
+.. code-block:: none
+
+  AgvStartMission(uAgv, MIS_TO_POINT, "Mission to point")
+  ;
+  uint wpidx
+  uchar destOrientation = 'X'
+  bool concatenateNext = true
+  ;
+  wpidx = AgvAddWaypoint(uAgv, uUser, destOrientation)
+  AgvAddMacro(uAgv, MAC_MOVE_TO_WP, wpidx, concatenateNext)
+  ;
+  AgvAddMacro(uAgv, MAC_END, MIS_TO_POINT)
+
+.. literalinclude:: listing/demo_drag_drop/agvDropToPoint_v0.xs
+  :caption: OnAgvDroppedToPoint()
+  :name: lstOnAgvDroppedToPoint
+  :lines: 279-310
+
+OnExpandMacro()
+----------------
+As we mentioned before, when a mission begin the function ``OnExpandMacro()`` is called automatically by AgvManager. We already started a mission in the function  ``OnAgvDroppedToPoint()`` and filled the **MACRO list** with 2 MACROs. So now we have to implement the callback function ``OnExpandMacro()``.
+
+AgvManager executes MACROs starting from the first one in the list. When it call the function ``OnExpandMacro()``, give it the ``Agv id``, ``mision id``, ``MARCO code/id`` and the four parameters stored in the list. We can imagine every elements of the list, is composed from those fields. So in the implementation of this function we check the MACRO code to be executed. We can use the case statement or the if in order to select our logic.
+
+The first MACRO is ``MAC_MOVE_TO_WP``. Under the case ``MAC_MOVE_TO_WP`` we implement the instructions to AgvManager:
+
+.. code-block:: none
+
+  case MAC_MOVE_TO_WP
+    ; iPar1 = Waypoint id
+    ; iPar2 = (bool) do concatenate next macro
+      select (AgvMoveToWayPoint(uAgv, uMission, WpFl_RicalcolaPercorsi | WpFl_EliminaCompletato))
+        case EsitoMov_MovimentoCompletato	; Completed movement
+        case EsitoMov_RaggiuntoWaypoint		; Waypoint reached
+          if (iPar2)
+            AgvComputeNextMacro(uAgv)
+          endif
+          return true
+        default
+          return false
+      endselect
+    return true
+
+In this code the motion instruction is done by calling ``AgvMoveToWayPoint()``, when this function return a value corresponding to ``MoveResult_WaypointReached``, the next MACRO is expanded. The next MACRO in our example list is the ``END\_MACRO``.
+
+When the return value of ``OnExpandMacro()`` is ``true``, it means the current macro execution is terminate, and on the next call the following macro will be executed.
+
+As we say every MACRO consist of different MICROs. A MACRO that correspond to a motion have a ``MIC_MOVE``. Here the ``MIC_MOVE`` is registered by the call of the movement function ``AgvMoveToWayPoint()``.
+
+The ``MAC_END`` register a ``MIC_SYSTEM`` micro type. When the ``MAC_END`` is expanded, it start or register a new micro. Simply this MACRO have only one ``MIC_SYSTEM`` micro type that is ``S_END``.
+
+This MICRO inform AgvManager that the mission is ended. In the case ``MAC_END`` the micro ``S_END`` is registered by calling ``AgvRegisterSystemBloccante(uAgv, uMission, S\_END)``, where the function ``agvStopMission(uagv)`` is called, as we will see in the function ``onExecuteMicro()``.
+
+As shown in fig. :ref:`figmissionExec`, AgvManager continue to call ``onExpandMacro()`` and ``onExcecuteMicro()``.
+
+When the ``onExpandMacro()`` terminate the function ``onExcecuteMicro()`` is called.
+
+In the tab **vehicle informations[F3]**, under Agv commands we can see a list of missions, macros expansion and micro instructions, as well as information about them.
+
+.. _figmacro_expansion_1:
+.. figure:: images/agvmanager/macro_expansion_1.png
+    :align: center
+    :name:
+    :figwidth: 600px
+
+    Macro expansion
+
+    Movment to point 1007, Macro MAC\_MOVE\_TO\_WP=100. As we can see, the macro consist of a list MICROs. Selecting a mission or a macro or a micro we can see informations about them.
+
+.. _figmacro_expansion_2:
+.. figure:: images/agvmanager/macro_expansion_2.png
+    :align: center
+    :name:
+    :figwidth: 600px
+
+    Macro expansion
+
+    Movement to point 1007, Macro MAC\_END=7. As we can see, the macro consist of on system micro that is S\_END
+
+.. _figmacro_expansion_3:
+.. figure:: images/agvmanager/macro_expansion_3.png
+    :align: center
+    :name:
+    :figwidth: 600px
+
+    Macro expansion
+
+    Mission load from a user point. The macro expansion shows 3 macros in the list. The MACRO 102, user defined, have only one micro of type operation that is O\_LOAD, system defined. Later we will the commands sent to agv in order to execute operations.
+
+Here is the complete code of the callback funtion :ref:`lstOnExpandMacro`
+
+.. literalinclude:: listing/demo_drag_drop/agvDropToPoint_v0.xs
+  :caption: OnExpandMacro()
+  :name: lstOnExpandMacro
+  :lines: 170-215
+
+OnExecuteMicro()
+-------------------
+
+MICROs are instructions to the vehicle. MICROs are stored in a list, one MACRO can register more than one MICRO fig. :ref:`figmacro_expansion_1`.
+
+For example a MICRO can be registered by calling ``agvRegisterSystemBloccante()`` or  ``agvRegisterSystemPassante()`` for ``MIC_SYSTEM`` type or ``AgvRegisterOperation()`` for ``MIC_OPERATION`` type. See documentation for a more complete list of micro registration functions.
+These function have ``uAgv``, ``uMission``, ``MICROcode`` as input parameters.
+
+There are different types of MICROs, that can be found in the documentation with prefix ``MIC_``. Let's see ``MIC_SYSTEM`` to which the ``S_END`` belong, this type of MICRO doesn't send any instruction to the agv itself. For example ``S_END`` is need to end a mission, and is managed by AgvManager.
+
+For example listing. :ref:`lstRegisterSystem`, register a 30 seconds waiting time.
+
+.. code-block:: none
+  :caption: AgvRegisterSystemBloccante
+  :name: lstRegisterSystem
+
+  ; Wait time system micro
+  $define S_START_WAIT    100
+  $define S_EXEC_WAIT     101
+  AgvRegisterSystemBloccante(uAgv, uMission, S_START_WAIT, iPar1)
+  AgvRegisterSystemBloccante(uAgv, uMission, S_EXEC_WAIT)
+
+A ``MIC_MOVE`` type is related to instruction of motion sent to the agv. A ``MIC_OPERATION`` is an operation like loading and unloading.
+
+There are 2 kinds of micros: blocking and non-blocking MICROs. The difference is that the blocking MICRO lock the execution of other micros till the end of the execution of itself or till the verification of a condition.
+
+When expanding macros, the micro list is composed by calling the relative registration function.
+For example, in the function ``OnExpandMacro()`` under the ``MAC_END``, we register a blocking system micro, ``S_END``.
+In the function ``onExecuteMicro()`` under the case ``MIC_SYSTEM`` and under the case ``S_END`` we call the function ``AgvStopMission(uAgv)`` in order to stop the mission. When a micro terminate the execution of the function ``onExecuteMicro()`` return true.
+
+When the mission is stopped the macro list is eliminated, and the agv is ready to get another mission.
+
+.. literalinclude:: listing/demo_drag_drop/agvDropToPoint_v0.xs
+  :caption: OnExecuteMicro()
+  :name: lstOnExecuteMicro
+  :lines: 217-277
+
+Complete project
+=================
+
+.. _figmantoauto:
+.. figure:: images/agvmanager/mantoauto.gif
+    :align: center
+    :name:
+    :figwidth: 600px
+
+    Manual to automatic mode
+
+:download:`Complete project <listing/demo_drag_drop/01_agvDemo.7z>`
 
 Summary
 ========
+In automatic mode, if the Agv is not executing a mission, if it is enabled the callback function ``onNextMission()`` is called. If there is a mission in progress, even if the Agv is not enabled, continue to execute the mission till the end or till receiving an abort mission command, see fig. :ref:`figmainLoop`.
+
+For example, in the implementation of the function ``onNextMission()`` missions can be assigned to agv depending on the plant status, e.g. by calling a user defined function ``RegisterMission()``. Th signature of the the function ``RegisterMission()`` can be defined as we wish.
+
+.. code-block:: none
+  :caption: onNextMission()
+  :name: lstonNextMission
+
+  ; onNextMission()
+  ; register mission depending on the plant logic
+  RegisterMission(uAgv, MIS\_LOAD\_FROM\_STATION, iPar1, iPar2)
+
+
+In the function ``RegisterMission()``, depending on the mission we compile the ``macro list``. For example if our mission is to go to load a product the macro list will composed in the following way:
+
+.. code-block:: none
+  :caption: RegisterMission() macro list is composed
+  :name: lstRegisterMission
+
+  ; RegisterMission()
+
+	; Start mission with id uMissionCode
+	AgvStartMission(uAgv, uMissionCode, MissionDescription)
+
+	case MIS_LOAD_FROM_STATION
+		;
+		uint wpidx
+		uchar destOrientation='X'
+		bool concatenateNext=true
+		wpidx = AgvAddWaypoint(uAgv, ID_LOAD_STATION, destOrientation)
+		AgvAddMacro(uAgv, MAC_MOVE_TO_WP, wpidx, concatenateNext)
+
+		; Wait for operator to load toilet
+		AgvAddMacro(uAgv, MAC_WAIT_END_LOADING)
+
+		; END of this mission
+		AgvAddMacro(uAgv, MAC_END, uCode)
+		break
+
+When a mission is in progress, and the macro list is not empty, the callback function ``onExpandMacro()`` is called. Depending on the macro we compile a list of micro instructions. For example one of the macros was ``MAC_WAIT_END_LOADING``:
+
+.. code-block:: none
+  :caption: onExpandMacro() micro list is composed
+  :name: lstonExpandMacro2
+
+  ; onExpandMacro()
+  case MAC_WAIT_END_LOADING
+  AgvRegisterSystemBloccante(uAgv, uMission, S_START_WAIT, 30)
+  AgvRegisterSystemBloccante(uAgv, uMission, S_EXEC_WAIT)
+  AgvRegisterOperation(uAgv, uMission, O_WAIT_LOAD)
+  break
+
+After the call of ``onExpandMacro()`` the callback function ``onExecuteMicro()`` is called, and depending on the micro we execute operations and instructions:
+
+.. code-block:: none
+  :caption: onExecuteMicro() micro are executed
+  :name: lstonExecuteMicro2
+
+  //onExecuteMicro()
+
+  case S_START_WAIT
+    timerWait[uAgv] = timeoutS(iPar1)
+    break
+
+  case S_EXEC_WAIT
+    if (isTimeout(timerWait[uAgv]))
+      return true
+    else
+      MultiMessageState(uAgv, "Agv " + (uAgv + 1) + " : wait " + int(secsToTimeout(timerWait[uAgv])) + "s")
+      return false
+  endif
+  break
+
+The state of mission execution is monitored cyclically. This mean that when a mission begin the functions ``onExpandMacro()`` and ``onExecuteMicro()`` are called repeatedly until the end of the mission, see fig. :ref:`figmissionExec`.
+``onExpandMacro()`` start executing the following macro in the list, when the previous returned true. The following micro is executed when ``onExecuteMicro()`` return true. The flag ``bLastCall`` is set to true by agvManager.
+
+The main logic of AGVs is written in the function ``onNextMission()``, where missions are assigned to AGV. When the logic is divided by missions, it is relatively easy to write the other 3 main functions : ``registerMission()``, ``onExpandMacro()`` and ``onExecuteMicro()``.
+
+Helper functions can be used to implement some useful logic.

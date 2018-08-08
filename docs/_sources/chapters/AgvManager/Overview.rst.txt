@@ -1,10 +1,43 @@
 
-*******************
 Overview
-*******************
+**********
 
 What is an AGV
 ==============
+
+Applications
+============
+Robox AGV's controller use three kinds of guidance:
+  - Laser
+  - Inertial
+  - Magnetic tape
+
+It allow OEM companies to implement Robox AGV's software easely.
+
+.. figure:: images/agv/agv1.jpg
+    :align: center
+    :figwidth: 600px
+
+.. figure:: images/agv/dep1_FEIN.jpeg
+    :align: center
+    :figwidth: 300px
+
+
+.. figure:: images/agv/agv3.jpg
+    :align: center
+    :figwidth: 300px
+
+.. figure:: images/agv/trastemuletto.jpg
+    :align: center
+    :figwidth: 300px
+
+.. figure:: images/agv/nav_877E1.jpeg
+    :align: center
+    :figwidth: 300px
+
+.. figure:: images/agv/nav_877E1.jpeg
+    :align: center
+    :figwidth: 300px
 
 AGV Robox softwares and tools
 ==============================

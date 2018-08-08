@@ -188,3 +188,5 @@ Terminology
 - Mission
 - Emulation
 - Operation
+- Event
+- Callback
