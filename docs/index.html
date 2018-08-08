@@ -83,8 +83,11 @@
 <li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/Rat.html">2. RAT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/AgvManager.html">3. AgvManager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/agvScript.html">4. Agv scripting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/More_examples.html">5. More examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html">6. Agv commissioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/functions1.html">5. Fundamental functions and data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/demo2.html">6. Demo 02: Drag and drop example with loading and loading operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/functions2.html">7. Overview on some functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/demo3.html">8. Demo 03: Storage example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html">9. Agv commissioning</a></li>
 </ul>
 
             
@@ -191,20 +194,40 @@ Innovation and quality have been Robox’s main goals since the very beginning.<
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/agvScript.html">4. Agv scripting</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/agvScript.html#agv-script-executing">4.1. AGV script executing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/agvScript.html#agv-script-execution">4.1. AGV script execution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/agvScript.html#drag-and-drop-example">4.2. Drag and drop example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/agvScript.html#complete-project">4.3. Complete project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/agvScript.html#summary">4.4. Summary</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/More_examples.html">5. More examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html">6. Agv commissioning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#mgv-mechanical-and-electrical-part">6.1. MGV mechanical and electrical part</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#dispan-display-panel">6.2. Dispan : Display panel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#commissioning">6.3. Commissioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#agv-ecosystem">6.4. AGV ecosystem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#hardware-configuration">6.5. Hardware configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#program-description">6.6. Program description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/functions1.html">5. Fundamental functions and data structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions1.html#xscript-agv-data-structures">5.1. Xscript Agv Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions1.html#some-useful-functions">5.2. Some useful functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions1.html#creating-functions-and-objects">5.3. Creating functions and objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/demo2.html">6. Demo 02: Drag and drop example with loading and loading operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/demo2.html#onagvdroppedtopoint">6.1. OnAgvDroppedToPoint()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/functions2.html">7. Overview on some functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions2.html#access-level">7.1. Access level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions2.html#onupdateio">7.2. onUpdateIO()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions2.html#onagvstatuschange-agv-status-flag-change">7.3. OnAgvStatusChange(): Agv status flag change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions2.html#onagvmodechange-agv-operating-mode-change">7.4. OnAgvModeChange(): Agv Operating mode change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions2.html#settings-xsettings">7.5. Settings: <code class="docutils literal notranslate"><span class="pre">XSettings</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions2.html#interaction-with-user-xform">7.6. Interaction with user: <code class="docutils literal notranslate"><span class="pre">XForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/AgvManager/functions2.html#semaphores">7.7. Semaphores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/AgvManager/demo3.html">8. Demo 03: Storage example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html">9. Agv commissioning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#mgv-mechanical-and-electrical-part">9.1. MGV mechanical and electrical part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#dispan-display-panel">9.2. Dispan : Display panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#commissioning">9.3. Commissioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#agv-ecosystem">9.4. AGV ecosystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#hardware-configuration">9.5. Hardware configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/MotionControl/Agv_commissioning.html#program-description">9.6. Program description</a></li>
 </ul>
 </li>
 </ul>

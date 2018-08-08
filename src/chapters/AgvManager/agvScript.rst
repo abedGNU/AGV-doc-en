@@ -1,9 +1,8 @@
 
-*******************
 Agv scripting
 *******************
 
-AGV script executing
+AGV script execution
 =====================
 AGV manager can be compared to a plc (hardware and firmware) and the script to a plc program. The firmware (kernel) is the same in all plants (beside updates and new functionality) and the script change from plant to another.
 

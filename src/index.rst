@@ -16,5 +16,8 @@ Welcome to Robox documentation!
    chapters/AgvManager/Rat
    chapters/AgvManager/AgvManager
    chapters/AgvManager/agvScript
-   chapters/AgvManager/More_examples
+   chapters/AgvManager/functions1
+   chapters/AgvManager/demo2
+   chapters/AgvManager/functions2
+   chapters/AgvManager/demo3
    chapters/MotionControl/Agv_commissioning
