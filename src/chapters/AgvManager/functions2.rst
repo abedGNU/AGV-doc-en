@@ -17,10 +17,13 @@ Sometime in a plant to a worker is permitted to do some job, to maintainer other
 
 The actual level can be read by calling the function ``ActualAccessLevel()``.
 
-``SetAccessLevelForOperation(DefQual_OpTrascinaAgvSuLinea, ACCESS_INST)``.
+.. code-block:: none
+
+	SetAccessLevelForOperation(DefQual_OpTrascinaAgvSuLinea, ACCESS_INST)
 
 onUpdateIO()
------------------
+--------------
+
 Drag and drop is useful to test vehicle. Normally a vehicle have to respond to some commands and react under some conditions that come from the plant. AgvManager can read input and output from a plc or a database. The callback function ``onUpdateIO(,,)`` is used to read input from a plc and write outputs to a plc.
 
 IO can be defined in AgvConfigurator, in the tab PLC we define the communication protocol and the number of DWord (uint 32bit) to be exchanged in input and output. In the tab I/O description we can assign names to digital inputs and outputs.
@@ -68,6 +71,7 @@ settings.ini file strucuture
 
 Interaction with user: ``XForm``
 ---------------------------------
+
 Qt creator
 
 Semaphores

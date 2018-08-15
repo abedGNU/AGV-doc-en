@@ -8,8 +8,11 @@ AGV manager can be compared to a plc (hardware and firmware) and the script to a
 
 AGV scripts are written in Xscript language. Xscript have some OOP properties (creating classes and objects), some event handling (e.g. mouse move event) and callback functions.
 
+X-cript general documentaion can be found in **RDE documentaion**, and the syntax related to AGV is found in **AgvManager documentation**.
+
 Fundamental concepts
 ---------------------
+Script in AgvManager are based on callback fucntions and event funtions.
 Callback functions are called automatically by AgvManager. A list of callback functions can be found in the documentation **x-script interface, Modules, Estensione x-script per AgvManager, Functions called by AgvManager (callbacks)**.
 
 For example the callback function ``OnApplicationStart() : bool`` is called once, at the first execution of the script, and the function ``OnApplicationStop() : bool`` is called when the script execution is stopped. Those are the entry and exit points of the script.

@@ -23,6 +23,7 @@ AGV manager will load the parameters set by Agv configurator, and main execute t
 
 Installation
 =============
+
 The installation of AgvManger is straightforward, like any program in Microsoft Windows. AgvConfigurator is installed automatically with AgvManager.
 
 In order to get the report from AgvManager a database should be installed. You can install MySql community version.
@@ -41,6 +42,7 @@ Once installed, a schortcut to AgvManager and AgvConfigurator have to be done. I
 
 AGV configurator
 =================
+
 AGV configurator is a standalone program that create a ``.fdoc`` configuration file for AGV manager. One folder can contain more than one configuration file.
 
 Project folder should be placed in the directory specified in the field ``Start in`` of the application properties, otherwise it will not work. By default the start point of the application is its installation directory.
@@ -91,6 +93,7 @@ AGV configurator. AGV tab, where communication parameters with the AGVs are set.
 
 AgvManager interface
 ====================
+
 AgvManager have one menu bar, one :ref:`figtoolbar`, one status bar, map visualization and different tabs [Fx].
 
 In the :ref:`figtoolbar`, we can find the button: Vehicle status, Commands insertion, Access level, color type, Zoom, Agv emulation, user define forms.
@@ -106,7 +109,7 @@ In the :ref:`figtoolbar`, we can find the button: Vehicle status, Commands inser
 In the status bar we can see some message from the script, date and time, and current access level.
 
 AGV emulation
--------------
+---------------
 If the flag ``emuagv.dll Vehicles emulation`` in AgvConfigurator is checked, we can emulate the AGV in AgvManager. The windows of the emulation can be opened via the button ``agv emulation control``.
 
 The :ref:`figAgvEmu` shows the status of the Agv, groupbox ``Status``, where are viewed the 32 Vehicle Status flags (XVehicleInfo.uStatus). The first 4 flags are written by the vehicle controller and the others can be defined by user in the vehicle controller.
@@ -147,7 +150,8 @@ For example, if we set the flag ``Load present`` to one, the agv behave dependin
 
 
 Point windows property
-----------------------
+-------------------------
+
 User points can be viewed as rectangles, where the dimensions are set in AgvConfigurator. A ``CBat`` (Battery point) is shown as a battery icon. On a double click on a user point or battery point a window is opened, see fig.:ref:`figLocStorageInfo`.
 
 .. _figLocStorageInfo:
@@ -175,7 +179,8 @@ Properties assigned by the function ``AddIntProperty()``, are shown in the :ref:
     Location window: Storage information and properties
 
 Terminology
-------------
+---------------
+
 - AGV
 - Vehicle
 - Loading unit
@@ -190,3 +195,4 @@ Terminology
 - Operation
 - Event
 - Callback
+- Debugging
