@@ -1,10 +1,6 @@
 Migration from Latex in progress
 ================================
 
-https://roboxmotion.github.io/AGV-doc-en/
-
-Refer to the latex version for the complete documentaion
+Refer to the latex version for an alternative documentation in pdf format
 
 https://abedgnu.github.io/Robox-Notes
-
-https://github.com/RoboxMotion/AGV-doc-en
